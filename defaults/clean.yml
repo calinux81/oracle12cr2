@@ -1,0 +1,39 @@
+- hosts: ora12node1.foad.local
+  tasks:
+
+  - name: List ASM disks
+    shell: oracleasm listdisks
+  - name: Scan ASM disks
+    shell: oracleasm scandisks
+  - name: Remove asm OCR_VOTING1 disk
+    shell: oracleasm deletedisk OCR_VOTING1 
+  - name: Remove asm FRA1 disk
+    shell: oracleasm deletedisk FRA1
+  - name: Remove asm DATA1 disk
+    shell: oracleasm deletedisk DATA1
+  - parted:
+     device: /dev/sda
+     number: 1
+     state: absent
+  - parted:
+     device: /dev/sdb
+     number: 1
+     state: absent
+  - parted:
+     device: /dev/sdc
+     number: 1
+     state: absent
+
+  - name: Scan ASM disks
+    shell: oracleasm listdisks
+
+  - name: List ASM disks
+    shell: oracleasm listdisks
+
+- hosts: ora12node1.foad.local
+  tasks:
+
+   - name: Scan ASM disks
+     shell: oracleasm listdisks
+   - name: List ASM disks
+     shell: oracleasm listdisks
