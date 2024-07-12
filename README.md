@@ -1,6 +1,9 @@
 Role Name
 =========
 
+<<<<<<< HEAD
+#Test ROLE
+=======
 A brief description of the role goes here.
 
 Requirements
@@ -38,3 +41,4 @@ Author Information
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
 # oracle12cr2
 #Test role
+>>>>>>> f55c32f87d25e8f04590b11f9add0e083b6829ac
